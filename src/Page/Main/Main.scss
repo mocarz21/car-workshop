@@ -1,0 +1,211 @@
+
+
+.container-main{
+  color: rgb(0, 162, 255);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+  .main-box{
+    margin-top:11%;
+    h1{
+      font-weight: bold;
+      font-size: 55px;
+      text-shadow: 5px 1px 2px rgb(121, 128, 97);
+    }
+    h2{
+      font-size: 40px;
+      margin-bottom: 0;
+      text-shadow: 1px 1px 2px rgb(121, 128, 97);
+    }
+    h3{
+      font-size: 35px;
+      text-shadow: 1px 1px 2px rgb(121, 128, 97);
+    }
+  }
+  .options{
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+
+    .option-one, .option-two{
+
+      &:hover{
+        text-shadow: 4px 4px 4px rgb(121, 128, 97);
+        color: aliceblue;
+      }
+    }
+  }
+  .overlay{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    z-index: 1000;
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+    .list-box{
+      .list-box-container{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between;
+        .text{
+          margin-left: 20px;
+          text-align: left;
+          h2,p{
+            margin: 0px;
+            padding: 2px;
+          }
+        }
+        .img-box{
+          margin-right: 20px;
+          width: 200px;
+          height: 100%;
+          img{
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+  } 
+  .overlay-left{
+    color: white;
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    
+    .contact-box{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  // Klasy dla CSSTransition
+  .overlay-enter {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  .overlay-enter-active{
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 300ms, transform 300ms;
+  }
+  .overlay-exit {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .overlay-exit-active {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 300ms, transform 300ms;
+  }
+
+  .overlay-left-enter {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  .overlay-left-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 300ms, transform 300ms;
+  }
+  .overlay-left-exit {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .overlay-left-exit-active {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 300ms, transform 300ms;
+  }
+
+  @media(max-width: 700px) {
+    .overlay-left {
+      flex-direction: column;
+      justify-content: center;
+      .contact-box{
+        margin-bottom: 50px;
+      }
+    }
+    iframe{
+      width: 100%;
+      height: 400px;
+    }
+  }
+
+  @media(min-width: 1920px){
+    .text{
+      margin-left: 20px;
+      text-align: left;
+      h2,p{
+        margin: 0px;
+        padding: 2px;
+      }
+    }
+    .options{
+      .option-one, .option-two{
+        h2{
+          font-size: 50px;
+          text-shadow: 10px 4px 4px rgb(97, 104, 128);
+        }
+      }
+    }
+    .overlay{
+      align-items:center;
+      .offert{
+        h2{
+          font-size: 40px;
+          margin-bottom: 0;
+        }
+        p{
+          font-size: 30px;
+        }
+      }
+      .list-box-container{
+        margin-top: 2%;
+        p{
+          font-size: larger;
+        }
+        .img-box{
+          margin-left: 1%;
+          width: 200px;
+          height: 100%;
+          
+          img{
+            width: 100%;
+            height: auto;
+            
+          }
+        }
+      }
+    }
+
+    .overlay-left{
+      .contact-box{
+        font-size: larger;
+        text-align: left;
+      }
+    }
+    .map-box{
+      width: 600px;
+      height: auto;
+    }
+    iframe{
+      width: 120%;
+      height: 500px;
+    }
+  }
+}
+
